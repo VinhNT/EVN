@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B24F72C-87A1-4A26-9F3C-06EF12E0196D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EVN</RootNamespace>
+    <AssemblyName>EVN</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1392908311_45034.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DirectX.Capture, Version=1.0.3366.16893, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\DirectX.Capture.dll</HintPath>
+    </Reference>
+    <Reference Include="DShowNET, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\DShowNET.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmAppSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAppSetting.Designer.cs">
+      <DependentUpon>frmAppSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\BPLayer.cs" />
+    <Compile Include="Lib\BPBase.cs" />
+    <Compile Include="Lib\AppSettingManager.cs" />
+    <Compile Include="Lib\RecognizeSingle.cs" />
+    <Compile Include="Lib\RecognizeSet.cs" />
+    <Compile Include="Lib\Recognizer.cs" />
+    <Compile Include="Lib\ConnectedComponent.cs" />
+    <Compile Include="Lib\IBackPropagation.cs" />
+    <Compile Include="Lib\IConnectedComponentLabeling.cs" />
+    <Compile Include="Lib\ImageProcessing.cs" />
+    <Compile Include="Lib\ImageProperty.cs" />
+    <Compile Include="Lib\Label.cs" />
+    <Compile Include="Lib\MyPoint.cs" />
+    <Compile Include="Lib\NeuralNetwork.cs" />
+    <Compile Include="Lib\Pixel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Win32.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="frmMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainForm.Designer.cs">
+      <DependentUpon>frmMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAppSetting.resx">
+      <DependentUpon>frmAppSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainForm.resx">
+      <DependentUpon>frmMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1392908311_45034.ico" />
+    <None Include="image\button_backspace.png" />
+    <None Include="image\button_hideboard.png" />
+    <None Include="image\button0.png" />
+    <None Include="image\button_exit.png" />
+    <None Include="image\button_back.png" />
+    <None Include="image\button9.png" />
+    <None Include="image\button8.png" />
+    <None Include="image\button7.png" />
+    <None Include="image\button6.png" />
+    <None Include="image\button5.png" />
+    <None Include="image\button4.png" />
+    <None Include="image\button3.png" />
+    <None Include="image\button2.png" />
+    <None Include="image\button1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
